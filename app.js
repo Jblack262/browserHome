@@ -3,7 +3,7 @@ const app = express();
 
 const bookmarks = require('./routes/bookmarkRoutes');
 const connectDB = require('./db/connect');
-const populateProducts = require('./populate');
+// const populateProducts = require('./populate');
 require('dotenv').config();
 
 // set the view engine to ejs
@@ -20,7 +20,10 @@ const port = 80;
 app.get('/', function(req, res) {
     res.render('pages/index');
 });
-
+// edit page
+app.get('/edit', function(req, res) {
+    res.render('pages/edit');
+});
 // app.listen(port, () => {
 //     console.log(`Server is listening on port ${port}`)
 // })
@@ -28,7 +31,7 @@ app.get('/', function(req, res) {
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
-        await populateProducts()
+        // await populateProducts()
         app.listen(port, console.log(`server is listening on port ${port}`));
     } catch (error) { console.log(error) }
 }

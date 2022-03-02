@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<form class="addIcon">
+  <h1>Add new bookmark</h1>
+
+  <p>Preview:</p>
+  <a class="bookmark preview">
+    <div>
+        <i class="material-icons" id="previewIcon"></i>
+        <h1 id="previewName"></h1>
+    </div>
+  </a>
+
+  <input type="text" name="name" id="name" placeholder="Name" required>
+  <input type="text" name="url" id="url" placeholder="URL" required>
+
+  <h3>Choose an Icon:</h3>
+  <div class="icons"></div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<div class="editBookmarks">
+  <h1 class="bookmarksTitle">Edit Bookmarks</h1>
+
+  <div class="bookmarksContainerEdit">
+    <!-- <a href="" class="bookmark">
+        <div>
+            <i class="material-icons">email</i>
+            <h1>Email</h1>
+        </div>
+    </a> -->
+  </div>
+  <p class="warningMessage">There are currently no bookmarks</p>
+</div>
+
+<a href="/" class="return">Back Home</a>
+<!-- axios -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- other js files -->
+<!-- <script src="../scripts/main.js"></script>
+<script src="../scripts/bookmarks.js"></script> -->
+<script src="../scripts/edit.js"></script>
+</body>
+</html>

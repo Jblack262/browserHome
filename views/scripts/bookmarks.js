@@ -1,15 +1,27 @@
-const icons = ['email', 'assignment', 'assistant_photo', 'build', 'business_center', 'chat', 'color_lens', 'dashboard', 'edit', 'explore', 'extension' ,'favorite' ,'folder' ,'grade', 'home', 'insert_drive_file', 'lightbulb_outline' , '	live_tv', '	local_grocery_store' ,'location_on' ,'restaurant', 'settings', 'today']
 
 const url = "/api/v1/bookmarks";
 
 const bookmarksContainerDOM = document.querySelector('.bookmarksContainer');
+const warningMessage = document.querySelector('.warningMessage');
 const showBookmarks = async () => {
     try {
         const { data: {bookmarks} } = await axios.get(url)
         console.log(bookmarks)
 
+        if (bookmarks.length < 1) {
+          warningMessage.innerHTML = "There are currently no bookmarks";
+          warningMessage.style.visibility = "visible";
+          warningMessage.style.display = "block";
+        } else {
+          warningMessage.style.visibility = "hidden";
+          warningMessage.style.display = "none";
+        }
+
         const bookmarksHTML = bookmarks.map(bookmark => {
-            const {icon, link, name} = bookmark;
+            let {icon, link, name} = bookmark;
+            if (!link.includes('http')) {
+                link = `https://${link}`
+            }
             return `
                 <a href="${link}" class="bookmark">
                     <div>
@@ -23,6 +35,9 @@ const showBookmarks = async () => {
         bookmarksContainerDOM.innerHTML = bookmarksHTML;
     } catch (err) {
         console.error(err)
+        warningMessage.innerHTML = "Error, could not fetch bookmarks.";
+        warningMessage.style.visibility = "visible";
+        warningMessage.style.display = "block";
     }
 }
-showBookmarks()
+showBookmarks();

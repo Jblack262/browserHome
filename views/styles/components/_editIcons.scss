@@ -1,0 +1,65 @@
+.addIcon {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	text-align: center;
+	width: 40rem;
+	max-width: 90%;
+	min-width: 50%;
+	input {
+		background-color: $secondary-dark;
+		color: $primary-light;
+		border: none;
+		padding: 0.5rem;
+		padding-left: 1rem;
+		border-radius: 0.5rem;
+		margin: 1rem 0;
+		font-size: 1.5rem;
+	}
+	.preview {
+		margin: 0 auto;
+	}
+	button[type='submit'] {
+		width: max-content;
+		color: $primary-light;
+		background-color: $secondary-dark;
+		border: 0.3em solid currentColor;
+		border-radius: 0.25em;
+		padding: 0.25rem 1rem;
+		margin: 0.5rem;
+		margin-left: auto;
+		cursor: pointer;
+	}
+	.icons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		gap: 0.25rem;
+		i {
+			font-size: 2.5rem;
+			cursor: pointer;
+			border-radius: 0.25rem;
+			&:hover {
+				background-color: rgba($color: #fff, $alpha: 0.1) !important;
+			}
+		}
+	}
+}
+.return {
+	width: max-content;
+	color: $primary-light;
+	text-decoration: none;
+	background-color: $secondary-dark;
+	border: 0.3em solid currentColor;
+	border-radius: 0.25em;
+	padding: 0.5rem 1rem;
+	margin: 2rem auto;
+	display: block;
+	cursor: pointer;
+}
+.warningMessage {
+	text-align: center;
+	font-size: 1.25rem;
+	display: none;
+	visibility: hidden;
+}

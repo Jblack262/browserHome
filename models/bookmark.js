@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const productSchema = new mongoose.Schema({
     icon: {
         type: String,
+        default: "grade",
         required: [true, "Must Provide An Icon."]
     },
     link: {
