@@ -24,6 +24,10 @@ app.get('/', function(req, res) {
 app.get('/edit', function(req, res) {
     res.render('pages/edit');
 });
+// login page
+app.get('/login', function(req, res) {
+    res.render('pages/login');
+});
 // app.listen(port, () => {
 //     console.log(`Server is listening on port ${port}`)
 // })

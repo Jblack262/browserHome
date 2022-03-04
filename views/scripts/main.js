@@ -1,4 +1,51 @@
+import {firebaseApp} from './firebase.js';
+import { getAuth, onAuthStateChanged, signOut, updateProfile } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
+
+const auth = getAuth(firebaseApp);
+
 const timeDOM = document.querySelector('#time');
+const loginBtn = document.querySelector('#loginBtn');
+const logoutBtn = document.querySelector('#logoutBtn');
+const loggedInMsg = document.querySelector('.loginMessage');
+const username = document.querySelector('#username');
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+
+        loginBtn.style.display = 'none';
+        loginBtn.style.visibility = 'hidden';
+
+        logoutBtn.style.display = 'block';
+        logoutBtn.style.visibility = 'visible';
+
+        loggedInMsg.style.display = 'block';
+        loggedInMsg.style.visibility = 'visible';
+        user.displayName ? username.innerHTML = user.displayName : username.innerHTML = 'unknown username';
+    } else {
+        // User is signed out
+
+        logoutBtn.style.display = 'none';
+        logoutBtn.style.visibility = 'hidden';
+        loggedInMsg.style.display = 'none';
+        loggedInMsg.style.visibility = 'hidden';
+        username.innerHTML = '';
+
+        loginBtn.style.display = 'block';
+        loginBtn.style.visibility = 'visible';
+    }
+});
+
+const logout = () => {
+    console.log('log out')
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log('signed out')
+    }).catch((error) => {
+        // An error happened.
+        console.log(error)
+    });
+}
+logoutBtn.addEventListener('click', () => logout())
 
 function startTime() {
     const today = new Date();

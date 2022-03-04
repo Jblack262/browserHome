@@ -1,0 +1,123 @@
+#loginForm {
+	background-color: $primary-light;
+	color: $primary-dark;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	h1 {
+		text-align: center;
+	}
+	.inputs {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		border-radius: 1rem;
+		input {
+			border: none;
+			outline: none;
+			border-bottom: 1px solid #00000022;
+			padding: 0.75rem 1rem;
+			&:last-of-type {
+				border: none;
+			}
+		}
+	}
+	.login {
+		color: $primary-light;
+		background-color: #353b48;
+		border: none;
+		width: 100%;
+		padding: 0.75rem;
+		margin: 1rem 0;
+		border-radius: 1rem;
+		cursor: pointer;
+		&:hover,
+		&:focus-within {
+			background-color: #2f3640;
+		}
+	}
+	.form-error {
+		color: #2d3436;
+		text-align: center;
+		margin: 0;
+		display: none;
+		visibility: hidden;
+	}
+}
+
+#signUpForm {
+	background-color: #f5f6fa;
+	color: #2d3436;
+	h1 {
+		text-align: center;
+	}
+	.inputs {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		border-radius: 1rem;
+		border: 1px solid #00000022;
+		input {
+			border: none;
+			outline: none;
+			border-bottom: 1px solid #00000022;
+			padding: 0.75rem 1rem;
+			&:last-of-type {
+				border: none;
+			}
+		}
+	}
+	.signIn {
+		color: #f5f6fa;
+		background-color: #487eb0;
+		border: none;
+		width: 100%;
+		padding: 0.75rem;
+		margin: 1rem 0;
+		border-radius: 1rem;
+		cursor: pointer;
+		&:hover,
+		&:focus-within {
+			background-color: #3a6996;
+		}
+	}
+	.form-error {
+		color: #2d3436;
+		text-align: center;
+		margin: 0;
+		display: none;
+		visibility: hidden;
+	}
+}
+
+#loginForm,
+#signUpForm {
+	width: clamp(30vw, 25rem, 90vw);
+	font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+	padding: 5rem 3rem;
+	box-sizing: border-box;
+
+	border-radius: 1rem;
+	box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+	.loginOption {
+		background-color: transparent;
+		color: currentColor;
+		width: 100%;
+		border: none;
+		padding: 0;
+		margin: 0;
+		cursor: pointer;
+		&:hover,
+		&.focus-within {
+			text-decoration: underline;
+		}
+		a {
+			color: currentColor;
+			text-decoration: none;
+			&:active {
+				filter: brightness(0.6);
+			}
+		}
+	}
+}

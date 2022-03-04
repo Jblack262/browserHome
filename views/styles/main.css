@@ -499,6 +499,12 @@ body {
   font-weight: 300;
 }
 
+@media screen and (max-width: 768px) {
+  #time {
+    margin-top: 4.5rem;
+  }
+}
+
 :root {
   --rad: 0.7rem;
   --dur: 0.3s;
@@ -660,5 +666,202 @@ body {
   font-size: 1.25rem;
   display: none;
   visibility: hidden;
+}
+
+.loginContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.loginContainer button {
+  display: none;
+  visibility: hidden;
+  background-color: #2a2f35;
+  color: #e1e2e2;
+  border: none;
+  margin: 0.5rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.loginContainer button a {
+  color: currentColor;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  display: block;
+}
+
+.loginMessage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0.5rem;
+  padding: 0;
+  display: none;
+  visibility: hidden;
+}
+
+.loginMessage p {
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+#loginForm {
+  background-color: #e1e2e2;
+  color: #1d2228;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#loginForm h1 {
+  text-align: center;
+}
+
+#loginForm .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+#loginForm .inputs input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #00000022;
+  padding: 0.75rem 1rem;
+}
+
+#loginForm .inputs input:last-of-type {
+  border: none;
+}
+
+#loginForm .login {
+  color: #e1e2e2;
+  background-color: #353b48;
+  border: none;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+#loginForm .login:hover, #loginForm .login:focus-within {
+  background-color: #2f3640;
+}
+
+#loginForm .form-error {
+  color: #2d3436;
+  text-align: center;
+  margin: 0;
+  display: none;
+  visibility: hidden;
+}
+
+#signUpForm {
+  background-color: #f5f6fa;
+  color: #2d3436;
+}
+
+#signUpForm h1 {
+  text-align: center;
+}
+
+#signUpForm .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid #00000022;
+}
+
+#signUpForm .inputs input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #00000022;
+  padding: 0.75rem 1rem;
+}
+
+#signUpForm .inputs input:last-of-type {
+  border: none;
+}
+
+#signUpForm .signIn {
+  color: #f5f6fa;
+  background-color: #487eb0;
+  border: none;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+#signUpForm .signIn:hover, #signUpForm .signIn:focus-within {
+  background-color: #3a6996;
+}
+
+#signUpForm .form-error {
+  color: #2d3436;
+  text-align: center;
+  margin: 0;
+  display: none;
+  visibility: hidden;
+}
+
+#loginForm,
+#signUpForm {
+  width: clamp(30vw, 25rem, 90vw);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  padding: 5rem 3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1rem;
+  -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+#loginForm .loginOption,
+#signUpForm .loginOption {
+  background-color: transparent;
+  color: currentColor;
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+#loginForm .loginOption:hover, #loginForm .loginOption.focus-within,
+#signUpForm .loginOption:hover,
+#signUpForm .loginOption.focus-within {
+  text-decoration: underline;
+}
+
+#loginForm .loginOption a,
+#signUpForm .loginOption a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+#loginForm .loginOption a:active,
+#signUpForm .loginOption a:active {
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
 }
 /*# sourceMappingURL=main.css.map */

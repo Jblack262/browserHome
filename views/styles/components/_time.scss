@@ -4,4 +4,8 @@
 	margin: 0.5em;
 	text-align: center;
 	font-weight: 300;
+
+	@media screen and (max-width: 768px) {
+		margin-top: 4.5rem;
+	}
 }
