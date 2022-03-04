@@ -2,7 +2,7 @@ const Bookmark = require('../models/bookmark');
 
 const getAllObjects = async (req, res) => {
     try {
-        // console.log('connection success')
+        // console.log(test)
         const bookmarks = await Bookmark.find({})
         res.status(201).json({bookmarks})
     } catch (error) {

@@ -1,7 +1,15 @@
+import {firebaseApp} from './firebase.js';
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
+// const mongoose = require('mongoose');
+
+const auth = getAuth(firebaseApp);
 
 const url = "/api/v1/bookmarks";
 
 const bookmarksContainerDOM = document.querySelector('.bookmarksContainer');
+const bookmarksTitle = document.querySelector('.bookmarksTitle');
+const bookmarksEditBtn = document.querySelector('#bookmarksEditBtn');
+const bookmarksLoginBtn = document.querySelector('#bookmarksLoginBtn');
 const warningMessage = document.querySelector('.warningMessage');
 const showBookmarks = async () => {
     try {
@@ -40,4 +48,18 @@ const showBookmarks = async () => {
         warningMessage.style.display = "block";
     }
 }
-showBookmarks();
+
+onAuthStateChanged(auth, (user) => {
+    if (user) { //if user is logged in bookmarks will be displayed
+        showBookmarks()
+    } else { //if not logged in they will be prompted to log in
+        console.log('not logged in')
+        bookmarksTitle.innerHTML = 'Please log in to see bookmarks'
+        bookmarksContainerDOM.innerHTML = '';
+        bookmarksEditBtn.style.visibility = 'hidden';
+        bookmarksEditBtn.style.display = 'none';
+
+        bookmarksLoginBtn.style.visibility = 'visible';
+        bookmarksLoginBtn.style.display = 'block';
+    }
+});

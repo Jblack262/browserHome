@@ -1,5 +1,5 @@
 import {firebaseApp} from './firebase.js';
-import { getAuth, onAuthStateChanged, signOut, updateProfile } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
 
 const auth = getAuth(firebaseApp);
 

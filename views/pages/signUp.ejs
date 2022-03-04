@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+  <div class="forms-container">
+    <form action="" id="signUpForm">
+      <h1>Sign Up</h1>
+      <div class="inputs">
+        <input type="text" name="name" id="name" placeholder="Username">
+        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="password" name="password" id="password" placeholder="Password">
+      </div>
+  
+      <button type="submit" class="signIn">Sign Up</button>
+      <button type="button" class="loginOption"><a href="/login">Or Sign In</a></button>
+  
+      <p class="form-error">There Has Been an Error</p>
+    </form>
+  </div>
+
+  <script type="module" src="../scripts/signup.js"></script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 const express = require('express');
+const connectDB = require('./db/connect')
 const app = express();
 
 const bookmarks = require('./routes/bookmarkRoutes');
-const connectDB = require('./db/connect');
 // const populateProducts = require('./populate');
 require('dotenv').config();
 
@@ -10,6 +10,7 @@ require('dotenv').config();
 app.set('view engine', 'ejs');
 app.use("/styles",express.static(__dirname + "/views/styles"));
 app.use("/scripts",express.static(__dirname + "/views/scripts"));
+app.use("/node_modules",express.static(__dirname + "/node_modules"));
 
 app.use(express.json());
 app.use('/api/v1/bookmarks', bookmarks);
@@ -28,6 +29,12 @@ app.get('/edit', function(req, res) {
 app.get('/login', function(req, res) {
     res.render('pages/login');
 });
+// sign up page
+app.get('/sign-up', function(req, res) {
+    res.render('pages/signUp');
+});
+
+
 // app.listen(port, () => {
 //     console.log(`Server is listening on port ${port}`)
 // })
