@@ -17,7 +17,7 @@ app.use(express.json());
 app.use('/api/v1/bookmarks', bookmarks);
 app.use(cookieParser());
 
-const port = 80;
+const port = process.env.PORT || 5000;
 
 // index page
 app.get('/', function(req, res) {
