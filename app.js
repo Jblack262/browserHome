@@ -1,6 +1,8 @@
 const express = require('express');
 const connectDB = require('./db/connect')
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+var favicon = require('serve-favicon');
+const path = require('path');
 const app = express();
 
 const bookmarks = require('./routes/bookmarkRoutes');
@@ -11,7 +13,8 @@ require('dotenv').config();
 app.set('view engine', 'ejs');
 app.use("/styles",express.static(__dirname + "/views/styles"));
 app.use("/scripts",express.static(__dirname + "/views/scripts"));
-app.use("/node_modules",express.static(__dirname + "/node_modules"));
+
+app.use(favicon(path.join(__dirname, '/views/assets', 'favicon.ico'))); 
 
 app.use(express.json());
 app.use('/api/v1/bookmarks', bookmarks);
