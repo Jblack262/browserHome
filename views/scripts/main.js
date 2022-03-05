@@ -1,6 +1,5 @@
 import {firebaseApp} from './firebase.js';
 import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
-
 const auth = getAuth(firebaseApp);
 
 const timeDOM = document.querySelector('#time');
@@ -72,3 +71,5 @@ const searchOnSubmit = (e) => {
     console.log(search)
     window.open(`https://www.google.com/search?q=${search}`, "_blank")
 }
+
+window.searchOnSubmit = searchOnSubmit;

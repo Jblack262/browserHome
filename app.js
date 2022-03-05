@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB = require('./db/connect')
+const cookieParser = require('cookie-parser')
 const app = express();
 
 const bookmarks = require('./routes/bookmarkRoutes');
@@ -14,11 +15,13 @@ app.use("/node_modules",express.static(__dirname + "/node_modules"));
 
 app.use(express.json());
 app.use('/api/v1/bookmarks', bookmarks);
+app.use(cookieParser());
 
 const port = 80;
 
 // index page
 app.get('/', function(req, res) {
+    res.cookie("Set-Cookie", "HttpOnly;Secure;SameSite=None");
     res.render('pages/index');
 });
 // edit page

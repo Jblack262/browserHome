@@ -46,7 +46,8 @@ h1 {
    * 2. Show the overflow in Edge and IE.
    */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -190,9 +191,9 @@ select {
    * Correct the inability to style clickable types in iOS and Safari.
    */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -200,9 +201,9 @@ button,
    * Remove the inner border and padding in Firefox.
    */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -211,9 +212,9 @@ button::-moz-focus-inner,
    * Restore the focus styles unset by the previous rule.
    */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -231,7 +232,8 @@ fieldset {
    *    `fieldset` elements in all browsers.
    */
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -263,9 +265,10 @@ textarea {
    * 1. Add the correct box sizing in IE 10.
    * 2. Remove the padding in IE 10.
    */
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box;
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -274,8 +277,8 @@ textarea {
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -283,7 +286,7 @@ textarea {
    * 1. Correct the odd appearance in Chrome and Safari.
    * 2. Correct the outline style in Safari.
    */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -293,7 +296,7 @@ textarea {
 /**
    * Remove the inner padding in Chrome and Safari on macOS.
    */
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -343,7 +346,20 @@ template {
 body {
   background-color: #1d2228;
   color: #e1e2e2;
-  font-family: "Roboto", "sans-serif";
+  font-family: 'Roboto', 'sans-serif';
+}
+
+.container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 100vh;
+  background-image: url("https://source.unsplash.com/random/1280x720/?lanscape");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: none;
+  -webkit-backdrop-filter: brightness(0.25);
+          backdrop-filter: brightness(0.25);
 }
 
 .bookmarksTitle {
@@ -355,41 +371,53 @@ body {
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1rem;
   margin: 0 auto;
   margin-bottom: 3rem;
   color: #e1e2e2;
 }
+
 @media screen and (max-width: 1439px) {
   .bookmarksContainer,
-.bookmarksContainerEdit {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  .bookmarksContainerEdit {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
+
 @media screen and (max-width: 1023px) {
   .bookmarksContainer,
-.bookmarksContainerEdit {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  .bookmarksContainerEdit {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
+
 @media screen and (max-width: 767px) {
   .bookmarksContainer,
-.bookmarksContainerEdit {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  .bookmarksContainerEdit {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
 @media screen and (max-width: 620px) {
   .bookmarksContainer,
-.bookmarksContainerEdit {
-    grid-template-columns: 1fr 1fr 1fr;
+  .bookmarksContainerEdit {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 @media screen and (max-width: 456px) {
   .bookmarksContainer,
-.bookmarksContainerEdit {
-    grid-template-columns: 1fr 1fr;
+  .bookmarksContainerEdit {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -404,47 +432,65 @@ body {
   position: relative;
   cursor: pointer;
 }
+
 .bookmark div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100%;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: auto 0;
   overflow: hidden;
 }
+
 .bookmark div i {
   font-size: 4rem;
   margin: 0.25rem;
   color: currentColor;
 }
+
 .bookmark div h1 {
   margin: 0;
   font-size: 1.75em;
   margin: 0.25rem;
   text-overflow: ellipsis;
   word-wrap: break-word;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   max-width: 100%;
 }
+
 .bookmark.edit::after {
-  content: "X";
+  content: 'X';
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.8);
+  display: -ms-grid;
   display: grid;
   place-items: center;
   font-size: 4rem;
   visibility: hidden;
   display: none;
 }
+
 .bookmark.edit:hover::after {
   visibility: visible;
+  display: -ms-grid;
   display: grid;
 }
 
 .bookmarkButton {
-  margin: 2rem auto;
+  margin: 0 auto;
   text-align: center;
   display: block;
   color: #e1e2e2;
@@ -463,16 +509,22 @@ body {
   visibility: hidden;
 }
 
+.buttonContainers {
+  padding: 2rem;
+}
+
 #time {
-  font-size: clamp(2rem, 15vw, 10rem);
-  font-family: "Poppins", sans-serif;
-  margin: 0.5em;
+  font-size: clamp(2rem, 15vw, 9.5rem);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0.5em;
   text-align: center;
   font-weight: 300;
 }
+
 @media screen and (max-width: 768px) {
   #time {
-    margin-top: 4.5rem;
+    padding-top: 4.5rem;
   }
 }
 
@@ -482,7 +534,7 @@ body {
   --color-dark: #2f2f2f;
   --color-light: #fff;
   --color-brand: #57bd84;
-  --font-fam: "Lato", sans-serif;
+  --font-fam: 'Lato', sans-serif;
   --height: 5rem;
   --btn-width: 6rem;
   --bez: cubic-bezier(0, 0, 0.43, 1.49);
@@ -495,23 +547,26 @@ body {
   min-width: 50%;
   background: #fb8122;
   border-radius: 100vw;
-  margin: 5rem auto;
+  margin: 3rem auto;
 }
+
 .search input,
 .search button {
   height: 4rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   border: 0;
   color: #e1e2e2;
   font-size: clamp(1.5rem, 5vw, 2rem);
 }
+
 @media screen and (max-width: 768px) {
   .search input,
-.search button {
+  .search button {
     height: 2.5rem;
   }
 }
-.search input[type=search] {
+
+.search input[type='search'] {
   width: 100%;
   background: #e1e2e2;
   padding: 0 1.5rem;
@@ -519,12 +574,15 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  -webkit-transition: all var(--dur) var(--bez);
   transition: all var(--dur) var(--bez);
+  -webkit-transition-property: width, border-radius;
   transition-property: width, border-radius;
   z-index: 1;
   position: relative;
   color: #1d2228;
 }
+
 .search button {
   display: none;
   position: absolute;
@@ -536,34 +594,30 @@ body {
   border-radius: inherit;
   cursor: pointer;
 }
-.search input:not(:-moz-placeholder-shown) {
-  width: calc(100% - var(--btn-width));
-}
-.search input:not(:-ms-input-placeholder) {
-  width: calc(100% - var(--btn-width));
-}
+
 .search input:not(:placeholder-shown) {
   width: calc(100% - var(--btn-width));
 }
-.search input:not(:-moz-placeholder-shown) + button {
-  display: block;
-}
-.search input:not(:-ms-input-placeholder) + button {
-  display: block;
-}
+
 .search input:not(:placeholder-shown) + button {
   display: block;
 }
 
 .addIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0 auto;
   text-align: center;
   width: 40rem;
   max-width: 90%;
   min-width: 50%;
 }
+
 .addIcon input {
   background-color: #2a2f35;
   color: #e1e2e2;
@@ -574,10 +628,12 @@ body {
   margin: 1rem 0;
   font-size: 1.5rem;
 }
+
 .addIcon .preview {
   margin: 0 auto;
 }
-.addIcon button[type=submit] {
+
+.addIcon button[type='submit'] {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -590,17 +646,25 @@ body {
   margin-left: auto;
   cursor: pointer;
 }
+
 .addIcon .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   gap: 0.25rem;
 }
+
 .addIcon .icons i {
   font-size: 2.5rem;
   cursor: pointer;
   border-radius: 0.25rem;
 }
+
 .addIcon .icons i:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
@@ -632,16 +696,18 @@ body {
   top: 0;
   right: 0;
 }
+
 .loginContainer button {
   display: none;
   visibility: hidden;
   background-color: #2a2f35;
   color: #e1e2e2;
-  border: none;
+  border: 4px solid currentColor;
   margin: 0.5rem;
   font-size: 1.25rem;
   border-radius: 0.5rem;
 }
+
 .loginContainer button a {
   color: currentColor;
   text-decoration: none;
@@ -658,6 +724,7 @@ body {
   display: none;
   visibility: hidden;
 }
+
 .loginMessage p {
   padding: 0.5rem 0.75rem;
   margin: 0;
@@ -670,26 +737,37 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
+
 #loginForm h1 {
   text-align: center;
 }
+
 #loginForm .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
   border-radius: 1rem;
 }
+
 #loginForm .inputs input {
   border: none;
   outline: none;
   border-bottom: 1px solid #00000022;
   padding: 0.75rem 1rem;
 }
+
 #loginForm .inputs input:last-of-type {
   border: none;
 }
+
 #loginForm .login {
   color: #e1e2e2;
   background-color: #353b48;
@@ -700,9 +778,11 @@ body {
   border-radius: 1rem;
   cursor: pointer;
 }
+
 #loginForm .login:hover, #loginForm .login:focus-within {
   background-color: #2f3640;
 }
+
 #loginForm .form-error {
   color: #2d3436;
   text-align: center;
@@ -717,27 +797,38 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
+
 #signUpForm h1 {
   text-align: center;
 }
+
 #signUpForm .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
   border-radius: 1rem;
   border: 1px solid #00000022;
 }
+
 #signUpForm .inputs input {
   border: none;
   outline: none;
   border-bottom: 1px solid #00000022;
   padding: 0.75rem 1rem;
 }
+
 #signUpForm .inputs input:last-of-type {
   border: none;
 }
+
 #signUpForm .signIn {
   color: #f5f6fa;
   background-color: #2a2f35;
@@ -748,9 +839,11 @@ body {
   border-radius: 1rem;
   cursor: pointer;
 }
+
 #signUpForm .signIn:hover, #signUpForm .signIn:focus-within {
   background-color: #1d2228;
 }
+
 #signUpForm .form-error {
   color: #2d3436;
   text-align: center;
@@ -764,10 +857,13 @@ body {
   width: clamp(30vw, 25rem, 90vw);
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   padding: 5rem 3rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 1rem;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
+
 #loginForm .loginOption,
 #signUpForm .loginOption {
   background-color: transparent;
@@ -778,17 +874,22 @@ body {
   margin: 0;
   cursor: pointer;
 }
+
 #loginForm .loginOption:hover, #loginForm .loginOption.focus-within,
 #signUpForm .loginOption:hover,
 #signUpForm .loginOption.focus-within {
   text-decoration: underline;
 }
+
 #loginForm .loginOption a,
 #signUpForm .loginOption a {
   color: currentColor;
   text-decoration: none;
 }
+
 #loginForm .loginOption a:active,
 #signUpForm .loginOption a:active {
-  filter: brightness(0.6);
-}/*# sourceMappingURL=main.css.map */
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
+}
+/*# sourceMappingURL=main.css.map */

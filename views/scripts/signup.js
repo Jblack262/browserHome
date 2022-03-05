@@ -26,16 +26,17 @@ const signUp = (email, password, displayName) => {
       const user = userCredential.user;
       console.log(user)
       console.log(`${user.email} has signed in!`);
-      console.log(name)
 
       updateProfile(auth.currentUser, {
         displayName: displayName
       }).then(() => {
         // Profile updated!
         // ...
+        window.location = '/login'
       }).catch((error) => {
         // An error occurred
         // ...
+        console.error(error)
       });
 
       console.log(user)

@@ -1,8 +1,8 @@
 const Bookmark = require('../models/bookmark');
 
-const getAllObjects = async (req, res) => {
+const getAllObjects = async (req, res, x) => {
     try {
-        // console.log(test)
+        console.log('test')
         const bookmarks = await Bookmark.find({})
         res.status(201).json({bookmarks})
     } catch (error) {
